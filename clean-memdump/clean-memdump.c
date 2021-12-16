@@ -73,7 +73,7 @@ char* findBoundary(char* buffer, size_t remaining, unsigned int* count) {
 
 void cleanBuffer(char* buffer, size_t N) {
 	char* p = buffer;
-	;
+
 	for (size_t n = 0; n < N; ++n, ++p) {
 		if (*p == '\0' || *p == '�') {
 			*p = ' ';
@@ -82,16 +82,16 @@ void cleanBuffer(char* buffer, size_t N) {
 }
 
 int main(int argc, char** argv) {
-
 	char buffer[BUFFER_SIZE + 1];
 	FILE* fin;
+
 	unsigned int nEquals = 0;
-	size_t N;
 	long start = -1;
 	char* p = NULL;
-	int j = 0;
+	size_t N;
 
 	fin = fopen(argv[1], "rb");
+
 	if (fin == NULL)
 		return -1;
 
@@ -113,7 +113,6 @@ int main(int argc, char** argv) {
 		}
 	}
 
-	// stuff to parse now
 	if (start >= 0) {
 		fseek(fin, start, SEEK_SET);
 
